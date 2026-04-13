@@ -35,7 +35,7 @@ async def load_mcp_tools():
                 )
             return ollama_tools
     except Exception as e:
-        print(f"❌ ERROR connecting to MCP server: {e}")
+        print(f" ERROR connecting to MCP server: {e}")
         print(f"\nMake sure the server is running:")
         print("  python mcp_server.py")
         sys.exit(1)
@@ -51,7 +51,7 @@ async def execute_tool(tool_name: str, arguments: dict):
             result = await mcp.call_tool(tool_name, arguments)
             return result
     except Exception as e:
-        print(f"❌ ERROR executing tool {tool_name}: {e}")
+        print(f" ERROR executing tool {tool_name}: {e}")
         return {"error": str(e)}
 
 
@@ -59,9 +59,9 @@ async def execute_tool(tool_name: str, arguments: dict):
 # Step 3: Main conversation loop
 # ------------------------------------------------------------
 async def main():
-    print("🔍 Loading MCP tools...")
+    print(" Loading MCP tools...")
     tools = await load_mcp_tools()
-    print(f"✅ Loaded {len(tools)} tools:")
+    print(f" Loaded {len(tools)} tools:")
     for tool in tools:
         print(f"   - {tool['function']['name']}: {tool['function']['description']}")
     print()
@@ -69,7 +69,7 @@ async def main():
     # The user's question
     user_msg = "Please greet John and then add 150 + 75."
     # user_msg = "Use the MCP tool to say hi to Jhon"
-    print(f"👤 User: {user_msg}\n")
+    print(f" User: {user_msg}\n")
 
     # Send to Ollama with tools available
     try:
@@ -80,7 +80,7 @@ async def main():
             stream=False,
         )
     except Exception as e:
-        print(f"❌ ERROR calling Ollama: {e}")
+        print(f" ERROR calling Ollama: {e}")
         print(f"\nMake sure:")
         print(f"  1. Ollama is running (ollama serve)")
         print(f"  2. Model is installed (ollama pull {OLLAMA_MODEL})")
@@ -88,7 +88,7 @@ async def main():
 
     # Check: Did AI want to use tools?
     if not response.get("message", {}).get("tool_calls"):
-        print("🤖 AI answered directly (no tools needed):")
+        print(" AI answered directly (no tools needed):")
         print(response["message"]["content"])
         return
 
@@ -103,12 +103,12 @@ async def main():
         if isinstance(args, str):
             args = json.loads(args)
 
-        print(f"🔧 Tool requested: {tool_name}")
-        print(f"📝 Arguments: {args}")
+        print(f" Tool requested: {tool_name}")
+        print(f" Arguments: {args}")
 
         # Execute the tool
         tool_result = await execute_tool(tool_name, args)
-        print(f"✅ Tool result: {tool_result}\n")
+        print(f" Tool result: {tool_result}\n")
 
         # Add tool response to conversation
         messages.append(
@@ -126,7 +126,7 @@ async def main():
         messages=messages,
     )
 
-    print("🤖 Final AI response:")
+    print(" Final AI response:")
     print(final["message"]["content"])
 
 
