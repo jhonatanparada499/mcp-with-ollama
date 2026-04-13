@@ -12,7 +12,7 @@ source myenv/bin/activate  # Linux/Mac
 ## FFRouting
 
 It is a "software that implements and manages various IPv4 and IPv6 routing protocols."
-Docker image: [ frrouting / frr](https://quay.io/repository/frrouting/frr)
+Docker image: [ frrouting / frr](https://hub.docker.com/r/frrouting/frr)
 
 Initial workflow  
 ```
