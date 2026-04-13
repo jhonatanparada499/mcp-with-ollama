@@ -66,9 +66,9 @@ async def main():
         print(f"   - {tool['function']['name']}: {tool['function']['description']}")
     print()
 
-    # The user's question
-    user_msg = "Please greet John and then add 150 + 75."
-    # user_msg = "Use the MCP tool to say hi to Jhon"
+    user_msg = (
+        "Is there anything wrong regarding the configuration of 'my-frr' container? "
+    )
     print(f" User: {user_msg}\n")
 
     # Send to Ollama with tools available
