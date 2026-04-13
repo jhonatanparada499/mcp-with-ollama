@@ -1,6 +1,8 @@
 # MCP with Ollama
 A chatbot that uses the MCP protocol to talk to network devices.  
 
+TASK: implement graphical interface  
+
 ## Architecture Diagram
 ![architecure_diagram](./docs/images/architecure_diagram.png)
 
