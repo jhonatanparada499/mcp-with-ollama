@@ -1,5 +1,5 @@
 # MCP with Ollama
-A chatbot that uses the MCP protocol to talk to network devices.  
+A chatbot that uses the MCP protocol to talk to network devices.   
 
 1. Start MCP server 2. Run python client
 
