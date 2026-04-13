@@ -1,22 +1,24 @@
-# mcp_server.py
+# server.py
 from fastmcp import FastMCP
+import subprocess
 
-# Create the MCP server instance
 mcp = FastMCP("My First MCP Server")
 
 
-# Define Tool 1: Add two numbers
 @mcp.tool()
-def add(a: int, b: int) -> int:
-    """Add two numbers together"""
-    return a + b
-
-
-# Define Tool 2: Greet someone
-@mcp.tool()
-def greet(name: str) -> str:
-    """Greet someone by name"""
-    return f"Hello, {name}! Welcome!"
+def get_running_config(container_name: str) -> str:
+    """Gets the running config file of a frr in a docker container"""
+    try:
+        config = subprocess.run(
+            ["docker", "exec", container_name, "vtysh", "-c", "show running-config"],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        return config.stdout
+    except subprocess.CalledProcessError as e:
+        error_msg = e.stderr or str(e)
+        return f"Error: {error_msg}"
 
 
 if __name__ == "__main__":
