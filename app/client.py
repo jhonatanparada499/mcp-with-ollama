@@ -1,4 +1,4 @@
-# client_ollama.py
+# client.py
 import json
 import ollama
 from fastmcp import Client as MCPClient
@@ -6,7 +6,7 @@ import asyncio
 import sys
 
 # Configuration
-OLLAMA_MODEL = "gemma4:31b-cloud"
+OLLAMA_MODEL = "llama3.2"
 MCP_SERVER_URL = "http://127.0.0.1:8080/sse"
 
 
