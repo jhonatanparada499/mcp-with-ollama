@@ -23,4 +23,10 @@ def get_running_config(container_name: str) -> str:
 
 if __name__ == "__main__":
     # Start the server
-    mcp.run(transport="sse", port=8080)
+    mcp.run(
+        transport="streamable-http",
+        stateless_http=True,
+        host="0.0.0.0",
+        port=9090,
+        path="/mcp",
+    )
