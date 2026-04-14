@@ -7,7 +7,7 @@ import sys
 
 # Configuration
 OLLAMA_MODEL = "gemma4:31b-cloud"
-MCP_SERVER_URL = "http://127.0.0.1:8080/sse"
+MCP_SERVER_URL = "http://127.0.0.1:9090/sse"
 
 
 # ------------------------------------------------------------
