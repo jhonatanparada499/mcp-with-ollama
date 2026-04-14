@@ -1,17 +1,29 @@
 services:
-    app:
-       # build:
-       #     context: ./app
-       # expose:
-       #     -  "5000"
-       # restart: always
-    frr: 
-        image: frrouting/frr:v8.4.0
-        # volumes:
-        # - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-        # depends_on:
-        # - app
-        # ports:
-        # - "80:80"
-        restart: always
+  mcp-server:
+    build:
+      context: ./mcp-server
+    # so i can call localhost:9090/mcp on openwebui
+    network_mode: host
+    depends_on:
+    - frr
+    restart: always
+  frr: 
+    image: frrouting/frr:v8.4.0
+    network_mode: host
+    privileged: true
+    # add future feature: persis frr config
+    # volumes:
+    # - ./frr:/frr
+    restart: always
+  open-webui: 
+    image: openwebui/open-webui
+    # the containter needs to access ollama API
+    network_mode: host
+    volumes:
+    - ./open-webui:/app/backend/data
+    depends_on:
+    - mcp-server
+    restart: always
 
+volumes:
+  open-webui:
