@@ -2,15 +2,18 @@ services:
   mcp-server:
     build:
       context: ./mcp-server
-    # so i can call localhost:9090/mcp on openwebui
     network_mode: host
     depends_on:
     - frr
     restart: always
   frr: 
-    image: frrouting/frr:v8.4.0
-    network_mode: host
+    build:
+      context: ./frr
+    # network_mode: host
     privileged: true
+    container_name: frr-router-1
+    ports:
+      - "2323:23"
     # add future feature: persis frr config
     # volumes:
     # - ./frr:/frr
