@@ -1,6 +1,9 @@
 # MCP with Ollama
 A chatbot that uses the MCP protocol to talk to network devices.  
 
+## Frontend
+![frontend](./docs/images/llm_using_mcp_tool.png)
+
 ## Architecture Diagram
 ![architecure_diagram](./docs/images/architecure_diagram.png)
 
@@ -11,7 +14,7 @@ Ollama address: http://127.0.0.1:11434
 It is a "software that implements and manages various IPv4 and IPv6 routing protocols."
 Docker image: [ frrouting / frr](https://hub.docker.com/r/frrouting/frr)
 
-Initial workflow  
+## Config File Output  
 ```
 root@hp-laptop:~$ docker run -d --privileged --name my-frr --net=host frrouting/frr:v8.4.0  # pulls img and starts it if not present
 root@hp-laptop:~$ docker exec -it my-frr /bin/bash  # enters container env
@@ -30,11 +33,6 @@ end
 hp-laptop#  
 bash-5.1# 
 exit
-```
-
-Stopping the container
-```
-docker stop my-frr
 ```
 
 ## Sources
