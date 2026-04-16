@@ -1,9 +1,6 @@
 # MCP with Ollama
-<<<<<<< HEAD
-A chatbot that uses the MCP protocol to talk to network devices.   
-=======
-An LLM that uses an MCP tool to talk to network devices via telnet.  
->>>>>>> 68bebe542ac097073cfc95fb74aa9df5744c5e03
+
+An LLM that uses an MCP tool to talk to network devices via telnet.
 
 ## Frontend
 ![frontend](./docs/images/llm_using_mcp_tool.png)
