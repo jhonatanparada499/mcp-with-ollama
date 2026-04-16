@@ -1,24 +1,31 @@
 # server.py
 from fastmcp import FastMCP
-import subprocess
+import telnetlib
+import time
 
 mcp = FastMCP("My First MCP Server")
 
 
 @mcp.tool()
-def get_running_config(container_name: str) -> str:
-    """Gets the running config file of a frr in a docker container"""
-    try:
-        config = subprocess.run(
-            ["docker", "exec", container_name, "vtysh", "-c", "show running-config"],
-            capture_output=True,
-            text=True,
-            check=True,
-        )
-        return config.stdout
-    except subprocess.CalledProcessError as e:
-        error_msg = e.stderr or str(e)
-        return f"Error: {error_msg}"
+def get_running_config() -> str:
+    """Gets the running configuration file of a frr device router via telnet"""
+    HOST = "127.0.0.1"
+    PORT = 2323
+
+    tn = telnetlib.Telnet(HOST, PORT, timeout=5)
+
+    time.sleep(1)
+
+    # command to show running config
+    tn.write(b"show running-config\n")
+    time.sleep(2)
+
+    output = tn.read_very_eager().decode("utf-8")
+
+    tn.write(b"exit\n")
+    tn.close()
+
+    return output
 
 
 if __name__ == "__main__":
