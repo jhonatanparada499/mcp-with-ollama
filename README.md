@@ -6,7 +6,7 @@ An LLM that uses an MCP tool to talk to network devices via telnet.
 ![frontend](./docs/images/llm_using_mcp_tool.png)
 
 ## Architecture Diagram
-![architecure_diagram](./docs/images/architecure_diagram.png)
+![architecure_diagram](./docs/images/WebOpenUI_MCP_Project_Architecture.drawio.png)
 
 FastMCP address: http://127.0.0.1:9090/mcp
 Ollama address: http://127.0.0.1:11434
