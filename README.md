@@ -1,4 +1,4 @@
-# MCP with Ollama
+# MCP + Ollama
 
 An LLM that uses an MCP tool to talk to network devices via telnet.
 
