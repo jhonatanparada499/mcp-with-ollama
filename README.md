@@ -36,5 +36,5 @@ exit
 ```
 
 ## Sources
-[Installation with Default Configuration](https://github.com/open-webui/open-webui#troubleshooting)  
-[Building Your First Agentic AI: Complete Guide to MCP + Ollama Tool Calling](https://dev.to/ajitkumar/building-your-first-agentic-ai-complete-guide-to-mcp-ollama-tool-calling-2o8g)  
+- [Installation with Default Configuration](https://github.com/open-webui/open-webui#troubleshooting)  
+- [Building Your First Agentic AI: Complete Guide to MCP + Ollama Tool Calling](https://dev.to/ajitkumar/building-your-first-agentic-ai-complete-guide-to-mcp-ollama-tool-calling-2o8g)  
