@@ -7,7 +7,7 @@ An LLM that uses a MCP tool to fetch router configuration files  via telnet.
 ## Architecture Diagram
 ![architecure_diagram](./docs/images/WebOpenUI_MCP_Project_Architecture.drawio.png)
 
-FastMCP address: http://127.0.0.1:9090/mcp
+FastMCP address: http://127.0.0.1:9090/mcp  
 Ollama address: http://127.0.0.1:11434
 
 ## FFRouting
