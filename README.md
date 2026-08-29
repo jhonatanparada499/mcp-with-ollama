@@ -2,7 +2,6 @@
 
 An LLM that uses a MCP tool to fetch router configuration files  via telnet.
 
-## Frontend
 ![frontend](./docs/images/llm_using_mcp_tool.png)
 
 ## Architecture Diagram
