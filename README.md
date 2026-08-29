@@ -1,6 +1,6 @@
 # MCP + Ollama
 
-An LLM that uses an MCP tool to talk to network devices via telnet.
+An LLM that uses a MCP tool to fetch router configuration files  via telnet.
 
 ## Frontend
 ![frontend](./docs/images/llm_using_mcp_tool.png)
