@@ -1,5 +1,6 @@
 # MCP + Ollama
 ![Ollama](https://img.shields.io/badge/ollama-%23000000.svg?&logo=ollama&logoColor=white)
+![Python](https://img.shields.io/badge/python-%23000000.svg?&logo=python&logoColor=white)
 
 An LLM that uses an MCP tool to fetch router configuration files  via telnet.
 
