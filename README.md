@@ -6,6 +6,11 @@ An LLM that uses an MCP tool to fetch router configuration files  via telnet.
 
 ![frontend](./docs/images/llm_using_mcp_tool.png)
 
+## Quick Start
+```
+$ docker compose up
+```
+
 ## Architecture Diagram
 ![architecure_diagram](./docs/images/WebOpenUI_MCP_Project_Architecture.drawio.png)
 
