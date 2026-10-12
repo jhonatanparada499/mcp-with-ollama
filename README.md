@@ -13,6 +13,12 @@
 
 ![frontend](./docs/images/llm_using_mcp_tool.png)
 
+## Table of Contents
+* [Quick Start](#quick-start)
+* [Architecture Diagram](#architecure-diagram)
+* [FFRouting](#ffrouting)
+* [Sources/Inspiration](#sources)
+
 ## Quick Start
 ```
 $ docker compose up
@@ -28,7 +34,7 @@ Ollama address: http://127.0.0.1:11434
 It is a "software that implements and manages various IPv4 and IPv6 routing protocols."  
 Docker image: [ frrouting / frr](https://hub.docker.com/r/frrouting/frr)
 
-## Config File Output  
+### Config File Output  
 ```
 root@hp-laptop:~$ docker run -d --privileged --name my-frr --net=host frrouting/frr:v8.4.0  # pulls img and starts it if not present
 root@hp-laptop:~$ docker exec -it my-frr /bin/bash  # enters container env
