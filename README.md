@@ -20,15 +20,16 @@
 * [Sources/Inspiration](#sources)
 
 ## Quick Start
+1. Clone repo and run:  
 ```
 $ docker compose up
 ```
-
+2. Enter these addresses in OpenWebUI's settings:  
+**FastMCP address:** http://127.0.0.1:9090/mcp  
+**Ollama address:** http://127.0.0.1:11434  
 ## Architecture Diagram
-![architecure_diagram](./docs/images/WebOpenUI_MCP_Project_Architecture.drawio.png)
 
-FastMCP address: http://127.0.0.1:9090/mcp  
-Ollama address: http://127.0.0.1:11434
+![architecure_diagram](./docs/images/WebOpenUI_MCP_Project_Architecture.drawio.png)
 
 ## FFRouting
 It is a "software that implements and manages various IPv4 and IPv6 routing protocols."  
