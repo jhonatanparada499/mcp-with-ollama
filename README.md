@@ -4,10 +4,12 @@
 </p>
 
 <h1 align="center">
-  FastMCP Server + Ollama + OpenWebUI Setup Template
+  FastMCP + Ollama + OpenWebUI Setup Template
 </h1>
 
-An LLM that uses an MCP tool to fetch router configuration files  via telnet.
+<p align="center">
+  A containerized setup that connects Ollama, OpenWebUI and a FastMCP server to answer questions about routers configurations.
+</p>
 
 ![frontend](./docs/images/llm_using_mcp_tool.png)
 
